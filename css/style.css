@@ -1,0 +1,366 @@
+/* Custom CSS for Dr. Tanwani's Braces & Dental Clinic */
+:root {
+    --primary-color: #0b2545; /* Deep Navy */
+    --primary-accent: #11a6a6; /* Vibrant Teal */
+    --primary-accent-dark: #0b7d7d;
+    --text-color: #333333;
+    --text-muted: #6c757d;
+    --bg-light: #f8f9fa;
+    --bg-gray: #f2f5f8;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Utilities */
+.text-primary-accent { color: var(--primary-accent) !important; }
+.bg-primary-accent { background-color: var(--primary-accent) !important; }
+.bg-navy { background-color: var(--primary-color) !important; }
+.bg-light-gray { background-color: var(--bg-gray) !important; }
+
+.text-gradient {
+    background: linear-gradient(90deg, #11a6a6, #48d1cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary-gradient {
+    background: linear-gradient(45deg, var(--primary-accent), var(--primary-accent-dark));
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-gradient:hover {
+    background: linear-gradient(45deg, var(--primary-accent-dark), var(--primary-accent));
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(17, 166, 166, 0.4);
+}
+
+.hover-accent:hover { color: var(--primary-accent) !important; }
+.hover-white:hover { color: #ffffff !important; opacity: 1; }
+
+.section-padding { padding: 80px 0; }
+.tracking-wide { letter-spacing: 2px; }
+.opacity-75 { opacity: 0.75; }
+
+/* Topbar */
+.topbar {
+    background-color: var(--primary-color);
+    color: #cbd5e1;
+    font-size: 0.85rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.navbar.scrolled .nav-logo {
+    height: 90px !important;
+    transition: 0.3s;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--primary-color) !important;
+    padding: 10px 15px !important;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-accent);
+    bottom: 5px;
+    left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: calc(100% - 30px);
+}
+
+.phone-link {
+    text-decoration: none;
+}
+
+.icon-pulse {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(17, 166, 166, 0.1);
+    color: var(--primary-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.icon-pulse::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--primary-accent);
+    opacity: 0.2;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(11, 37, 69, 0.95) 0%, rgba(11, 37, 69, 0.7) 40%, rgba(11, 37, 69, 0.1) 100%);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+/* Stats */
+.stats-section {
+    margin-top: -60px;
+}
+
+.stat-box {
+    transition: 0.3s;
+}
+
+.stat-box:hover {
+    background-color: rgba(17, 166, 166, 0.05);
+    transform: translateY(-5px);
+}
+
+/* About Section */
+.about-image-wrapper {
+    padding: 20px 20px 0 0;
+}
+
+.portrait-img {
+    height: 500px;
+}
+
+.experience-card {
+    bottom: -20px;
+    right: -20px;
+    z-index: 2;
+}
+
+/* Phone Glow */
+.glow-icon {
+    box-shadow: 0 0 15px rgba(17,166,166,0.5);
+    transition: 0.3s;
+}
+.signature-phone:hover .glow-icon {
+    box-shadow: 0 0 25px rgba(17,166,166,0.8);
+    transform: scale(1.05);
+}
+
+/* Why Us Section */
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.why-card {
+    transition: 0.3s;
+}
+.why-card:hover {
+    background-color: rgba(255,255,255,0.15) !important;
+    transform: translateY(-5px);
+}
+
+/* Services */
+.heading-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-accent);
+    border-radius: 2px;
+}
+
+.service-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    border-color: rgba(17, 166, 166, 0.2);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    transition: 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background-color: var(--primary-accent) !important;
+}
+
+.service-card:hover .service-icon i {
+    color: white !important;
+}
+
+.alert-soft-primary {
+    background-color: rgba(17, 166, 166, 0.1);
+    color: var(--primary-color);
+}
+
+/* Gallery */
+.gallery-item {
+    cursor: pointer;
+}
+
+.gallery-img {
+    transition: transform 0.6s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 37, 69, 0.85);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay h4, .gallery-overlay h5 {
+    transform: translateY(20px);
+    transition: 0.4s;
+    text-align: center;
+}
+
+.gallery-item:hover .gallery-overlay h4,
+.gallery-item:hover .gallery-overlay h5 {
+    transform: translateY(0);
+}
+
+/* Testimonials */
+.testimonial-card {
+    transition: 0.3s;
+}
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+/* Contact Details */
+.map-container iframe {
+    height: 100%;
+    min-height: 400px;
+}
+.icon-box {
+    width: 50px;
+    height: 50px;
+}
+
+/* Footer Links */
+.footer .social-link:hover {
+    background-color: var(--primary-accent) !important;
+    transform: translateY(-3px);
+}
+.footer-links a {
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+.footer-links a:hover {
+    color: var(--primary-accent) !important;
+    padding-left: 5px !important;
+    background-color: transparent !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .experience-card {
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .hero-section {
+        height: auto;
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+    
+    .stats-section {
+        margin-top: 30px;
+    }
+}
