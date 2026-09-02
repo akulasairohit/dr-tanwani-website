@@ -91,13 +91,24 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     height: 48px !important;
 }
 
+.navbar .navbar-collapse {
+    align-items: center;
+}
+
+.navbar-nav {
+    align-items: center;
+    margin-bottom: 0 !important;
+}
+
 .nav-link {
     font-weight: 500;
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     color: var(--primary-color) !important;
-    padding: 6px 10px !important;
+    padding: 6px 8px !important;
     position: relative;
+    white-space: nowrap !important;
     transition: 0.3s;
+    display: inline-block;
 }
 
 .nav-link::after {
@@ -107,12 +118,48 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     height: 2px;
     background: var(--primary-accent);
     bottom: 0px;
-    left: 10px;
+    left: 8px;
     transition: 0.3s;
 }
 
 .nav-link:hover::after, .nav-link.active::after {
-    width: calc(100% - 20px);
+    width: calc(100% - 16px);
+}
+
+/* Navbar CTA Group */
+.navbar-cta-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+}
+
+.navbar-cta-group .btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 0.84rem !important;
+    padding: 8px 16px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    line-height: 1 !important;
+    height: 40px !important;
+    border-radius: 50px !important;
+}
+
+/* Doctor Credential Badge */
+.hero-badge,
+.hero-section .badge,
+header .badge {
+    white-space: normal !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    text-align: left;
+    max-width: 100%;
+    line-height: 1.4;
+    word-break: normal;
 }
 
 .phone-link {
@@ -359,6 +406,21 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 /* Responsive Overrides */
+@media (min-width: 992px) and (max-width: 1260px) {
+    .nav-link {
+        font-size: 0.82rem !important;
+        padding: 6px 6px !important;
+    }
+    .navbar-cta-group .btn {
+        font-size: 0.76rem !important;
+        padding: 6px 10px !important;
+        height: 34px !important;
+    }
+    .nav-logo {
+        height: 46px !important;
+    }
+}
+
 @media (max-width: 991px) {
     .experience-card {
         right: 10px;
@@ -367,12 +429,58 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     
     .hero-section {
         height: auto;
-        padding-top: 130px;
-        padding-bottom: 80px;
+        padding-top: 110px !important;
+        padding-bottom: 70px !important;
     }
     
     .stats-section {
         margin-top: 20px;
+    }
+
+    .navbar-cta-group {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar-cta-group .btn {
+        width: 100% !important;
+        height: 42px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding-top: 95px !important;
+        padding-bottom: 50px !important;
+    }
+
+    .hero-badge,
+    .hero-section .badge,
+    header .badge {
+        font-size: 0.75rem !important;
+        padding: 6px 12px !important;
+        border-radius: 25px !important;
+        white-space: normal !important;
+        max-width: 100% !important;
+        line-height: 1.35 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        text-align: left !important;
+    }
+
+    .hero-badge i,
+    .hero-section .badge i,
+    header .badge i {
+        font-size: 0.85rem !important;
+        margin-right: 6px !important;
+        flex-shrink: 0;
+    }
+
+    .hero-headline {
+        font-size: 2.15rem !important;
+        line-height: 1.22 !important;
+        margin-bottom: 16px !important;
     }
 }
 
